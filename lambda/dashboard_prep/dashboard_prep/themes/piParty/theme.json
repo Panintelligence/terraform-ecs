@@ -1,0 +1,79 @@
+{
+    "customFontUrls": [
+        {
+            "orderingIndex": 0,
+            "url": "https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap"
+        },
+        {
+            "orderingIndex": 1,
+            "url": "https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
+        }
+    ],
+    "themeConfig": {
+        "dashboardLogo": "PinkPicon.png",
+        "loginScreenBackgroundImage": "piLogin-01.png",
+        "loginScreenLogo": "letsplaywithpi.png",
+        "alwaysShowLogo": true,
+        "chartGridLineColor": null,
+        "chartLightBulbBorderDisplay": true,
+        "turnOffTooltips": false,
+        "pdfLogo": "PinkPicon.png",
+        "loadingIcon": null
+    },
+    "themeColors": [
+        {
+            "description": "67C4D1",
+            "colorCode": "#67c4d1",
+            "id": 630363460,
+            "orderingIndex": 0
+        },
+        {
+            "description": "2EB3A0",
+            "colorCode": "#2eb3a0",
+            "id": 258649450,
+            "orderingIndex": 1
+        },
+        {
+            "description": "FAC171",
+            "colorCode": "#fac171",
+            "id": 732280414,
+            "orderingIndex": 2
+        },
+        {
+            "description": "F18815",
+            "colorCode": "#f18815",
+            "id": 976994873,
+            "orderingIndex": 3
+        },
+        {
+            "description": "E84E0F",
+            "colorCode": "#e84e0f",
+            "id": 988333551,
+            "orderingIndex": 4
+        },
+        {
+            "description": "FF457A",
+            "colorCode": "#ff457a",
+            "id": 928756022,
+            "orderingIndex": 5
+        },
+        {
+            "description": "D80751",
+            "colorCode": "#d80751",
+            "id": 239121291,
+            "orderingIndex": 6
+        },
+        {
+            "description": "8D135B",
+            "colorCode": "#8d135b",
+            "id": 660647818,
+            "orderingIndex": 7
+        },
+        {
+            "description": "AAAFB2",
+            "colorCode": "#aaafb2",
+            "id": 691618817,
+            "orderingIndex": 8
+        }
+    ]
+}
