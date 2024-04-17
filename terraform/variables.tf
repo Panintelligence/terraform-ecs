@@ -82,11 +82,9 @@ variable "pi_tomcat_max_memory" {
 }
 
 variable "pi_proxy_host" {
-  default = "poc.panintelligence-sandbox.cloud"
 }
 
 variable "renderer_dashboard_url" {
-  default = "https://poc.panintelligence-sandbox.cloud/pi/"
 }
 
 variable "scheduler_cpu" {
