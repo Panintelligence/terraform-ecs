@@ -25,14 +25,19 @@ def lambda_handler(event, context):
             shutil.rmtree("/mnt/efs/themes")
             shutil.copytree("themes", "/mnt/efs/themes")
 
-        # Copy "themes" directory if not exist or FORCE_THEMES is true
+        # Copy "locale" directory if not exist or FORCE_LOCALE is true
         if not os.path.isdir("/mnt/efs/locale") or os.getenv("FORCE_LOCALE") == "true":
-            shutil.copytree("locale", "/mnt/efs/locale")
-        elif os.getenv("FORCE_LOCALE") == "true":
-            shutil.rmtree("/mnt/efs/locale")
-            shutil.copytree("locale", "/mnt/efs/locale")
+            shutil.rmtree("/mnt/efs/locale", ignore_errors=True)  # Remove existing locale directory
+            shutil.copytree("locale", "/mnt/efs/locale")  # Copy locale directory
 
-        # Remove and recreate "svg", "custom_jdbc", and "locale" directories
+        # Check if locale files exist
+        locale_files = os.listdir("/mnt/efs/locale")
+        if locale_files:
+            logger.info(f"Locale files exist in /mnt/efs/locale: {locale_files}")
+        else:
+            logger.warning("No locale files found in /mnt/efs/locale")
+
+        # Remove and recreate "svg", "custom_jdbc", and "images" directories
         for directory in ["svg", "custom_jdbc", 'images']:
             if os.path.isdir(f"/mnt/efs/{directory}"):
                 shutil.rmtree(f"/mnt/efs/{directory}")
