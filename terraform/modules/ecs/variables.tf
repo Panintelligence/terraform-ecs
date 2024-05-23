@@ -1,7 +1,5 @@
 variable "docker_hub_secrets_arn" {}
 
-variable "dashboard_docker_tag" {}
-
 variable "dashboard_db" {}
 
 variable "dashboard_efs" {}

@@ -1,5 +1,5 @@
 resource "aws_efs_file_system" "dashboard" {
-  creation_token = "dashboard-efs-${var.deployment_name}"
+  creation_token = "panintelligence-efs-${var.deployment_name}"
 
   tags = {
     Name = "${var.deployment_name}-efs"
@@ -49,7 +49,7 @@ resource "aws_efs_access_point" "access_point_for_lambda" {
 
 
 resource "aws_iam_role" "dashboard_efs_backup" {
-  name = "dashboard_efs_backup_${var.deployment_name}"
+  name = "panintelligence_efs_backup_${var.deployment_name}"
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
@@ -75,14 +75,14 @@ resource "aws_iam_role_policy_attachment" "dashboard_efs_backup" {
 }
 
 resource "aws_backup_vault" "dashboard_efs_backup" {
-  name = "dashboard_efs_backup"
+  name = "panintelligence_efs_backup_${var.deployment_name}"
   tags = {
     Billing = var.deployment_name
   }
 }
 
 resource "aws_backup_plan" "dashboard_efs_backup" {
-  name = "dashboard_efs_backup"
+  name = "panintelligence_efs_backup_${var.deployment_name}"
 
   rule {
     rule_name = "dashboard_efs_backup"
@@ -96,7 +96,7 @@ resource "aws_backup_plan" "dashboard_efs_backup" {
 
 resource "aws_backup_selection" "dashboard" {
   iam_role_arn = aws_iam_role.dashboard_efs_backup.arn
-  name = "dashboard-efs-backup"
+  name = "panintelligence_efs_backup_${var.deployment_name}"
   plan_id = aws_backup_plan.dashboard_efs_backup.id
 
   resources = [

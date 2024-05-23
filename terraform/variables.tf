@@ -13,9 +13,6 @@ variable "hosted_zone_edit_role_arn" {}
 
 variable "hosted_zone_id" {}
 
-variable "dashboard_docker_tag" {}
-
-variable "renderer_docker_tag" {}
 
 variable "dashboard_db_password" {}
 
@@ -108,7 +105,7 @@ variable "pirana_image" {
 }
 
 variable "pirana_image_version" {
-  default = "2024_03"
+  default = "2024_04"
 }
 
 variable "dashboard_image" {
@@ -116,7 +113,7 @@ variable "dashboard_image" {
 }
 
 variable "dashboard_image_version" {
-  default = "2024_03"
+  default = "2024_04"
 }
 
 variable "scheduler_image" {
@@ -124,7 +121,7 @@ variable "scheduler_image" {
 }
 
 variable "scheduler_image_version" {
-  default = "2024_03"
+  default = "2024_04"
 }
 
 variable "renderer_image" {
@@ -132,5 +129,5 @@ variable "renderer_image" {
 }
 
 variable "renderer_image_version" {
-  default = "2024_03"
+  default = "2024_04"
 }

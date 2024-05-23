@@ -136,6 +136,8 @@ resource "aws_route_table_association" "database_a" {
 resource "aws_subnet" "database_b" {
   vpc_id = aws_vpc.pi.id
   cidr_block = cidrsubnet(aws_vpc.pi.cidr_block, 4, 5)
+  availability_zone = data.aws_availability_zones.available.names[1]
+
   tags = {
     Name = "${var.deployment_name}-database-b"
     Billing = var.deployment_name

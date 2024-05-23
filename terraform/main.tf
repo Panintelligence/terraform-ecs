@@ -76,7 +76,6 @@ module "iam" {
 module "ecs" {
   source = "./modules/ecs"
   dashboard_db = module.rds.dashboard_db
-  dashboard_docker_tag = var.dashboard_docker_tag
   dashboard_efs = module.efs.dashboard_efs
   dashboard_sg = module.network.dashboard_sg
   dashboard_target_group = module.elb.dashboard_target_group
