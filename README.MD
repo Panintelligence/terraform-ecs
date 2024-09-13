@@ -20,7 +20,7 @@ source .env
 ## Initialise terraform
 You will need an AWS S3 bucket to save your Terraform state file.
 ```
-terraform init -backend-config="bucket=s3 bucket name here" -backend-config="region=eu-west-1" -backend-config="key=poc/terraform.tfstate"
+terraform init -backend-config="bucket=<<bucketname>>" -backend-config="region=" -backend-config="key=<<name>>/terraform.tfstate"
 ```
 
 ## Create Plan

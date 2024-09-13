@@ -76,7 +76,7 @@ resource "aws_lb_target_group" "adminer" {
 
 resource "aws_lb_target_group" "renderer" {
   name = "${var.deployment_name}-renderer"
-  port = 8224
+  port = 9915
   protocol = "HTTP"
   vpc_id = var.vpc_id
   target_type = "ip"
@@ -101,7 +101,7 @@ resource "aws_lb_target_group" "renderer" {
 
 resource "aws_lb_target_group" "scheduler" {
   name = "${var.deployment_name}-scheduler"
-  port = 8224
+  port = 9917
   protocol = "HTTP"
   vpc_id = var.vpc_id
   target_type = "ip"
@@ -126,7 +126,7 @@ resource "aws_lb_target_group" "scheduler" {
 
 resource "aws_lb_target_group" "pirana" {
   name = "${var.deployment_name}-pirana"
-  port = 8224
+  port = 9918
   protocol = "HTTP"
   vpc_id = var.vpc_id
   target_type = "ip"

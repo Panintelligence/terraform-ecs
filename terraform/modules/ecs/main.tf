@@ -116,7 +116,7 @@ resource "aws_ecs_task_definition" "dashboard" {
     "environment": [
       {
         "name": "PI_DB_HOST",
-        "value": "${var.dashboard_db.endpoint}"
+        "value": "${var.dashboard_db.address}"
       },
       {
         "name": "PI_DB_PASSWORD",
@@ -318,7 +318,7 @@ resource "aws_ecs_task_definition" "scheduler" {
     "environment": [
       {
         "name": "PI_DB_HOST",
-        "value": "${var.dashboard_db.endpoint}"
+        "value": "${var.dashboard_db.address}"
       },
       {
         "name": "PI_DB_PASSWORD",
